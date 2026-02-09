@@ -48,7 +48,6 @@ st.markdown("""
             padding: 20px;
             border-radius: 10px;
             margin: 10px 0;
-            color:black;
             border-left: 5px solid #667eea;
         }
     </style>
@@ -70,7 +69,7 @@ def load_model():
 def load_data():
     """Load the original customer data"""
     try:
-        df = pd.read_csv("Mall_Customers.csv")
+        df = pd.read_csv('Mall_Customers.csv')
         return df
     except FileNotFoundError:
         st.error("Data file not found.")

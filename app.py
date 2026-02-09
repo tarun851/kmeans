@@ -70,7 +70,7 @@ def load_model():
 def load_data():
     """Load the original customer data"""
     try:
-        df = pd.read_csv(r"C:\Users\tarun\OneDrive\Desktop\tekworks\K-Means\Mall_Customers.csv")
+        df = pd.read_csv("Mall_Customers.csv")
         return df
     except FileNotFoundError:
         st.error("Data file not found.")
@@ -244,7 +244,7 @@ if model is not None and df is not None:
             st.markdown("### 💡 Cluster Insights")
             
             # Calculate cluster statistics from original data
-            clustered_data = pd.read_csv(r"C:\Users\tarun\OneDrive\Desktop\tekworks\K-Means\cluster_mall_customers.csv")
+            clustered_data = pd.read_csv("cluster_mall_customers.csv")
             cluster_stats = clustered_data[clustered_data['Cluster'] == cluster]
             
             st.markdown(f"""
@@ -265,7 +265,7 @@ if model is not None and df is not None:
         
         with viz_col1:
             # 3D scatter plot showing the prediction
-            clustered_df = pd.read_csv(r"C:\Users\tarun\OneDrive\Desktop\tekworks\K-Means\cluster_mall_customers.csv")
+            clustered_df = pd.read_csv("cluster_mall_customers.csv")
             
             # Inverse transform to original scale for visualization
             original_scaled = clustered_df[['Age', 'Annual Income (k$)', 'Spending Score (1-100)']].copy()
